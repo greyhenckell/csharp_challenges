@@ -24,18 +24,18 @@ using System;
 using System.Globalization;
 
 //define out variables
-double total=0;
+float total=0.0f;
 string message = "";
 //test input values
 string[] values = { "12.3", "45", "ABC", "11", "DEF" };
 
 foreach (string mvalue in values)
 {
-    double numericValue;
+    float numericValue;
     //Requires CultureInfo to kepp the period separator : 
     // with out CultureInfo, 12.3 -> 123 
     // with CultureInfo  12.3 -> 12,3
-    if ( double.TryParse(mvalue, NumberStyles.Any, CultureInfo.InvariantCulture,out numericValue) )
+    if ( float.TryParse(mvalue, CultureInfo.InvariantCulture,out numericValue) )
     {
         //Console.WriteLine($"converting: {mvalue} to {numericValue}");        
         total += numericValue;
